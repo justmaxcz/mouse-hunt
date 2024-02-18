@@ -2,24 +2,21 @@
 
 echo "simple mouse hunt"
 echo "made by stuffbymax"
-echo "===================" 
+echo "==================="
 
 # Print a message
 echo "Press enter to continue"
-
-# Wait for the user to press enter
 read
 
 # Do something else
 echo "Continuing the script"
-
 
 # Define the track length
 track_length=200
 
 # Define the starting positions of the cat and mouse
 cat_pos=0
-mouse_pos=$(($track_length - 2))
+mouse_pos=$(($track_length - 2))  # Initial mouse position (2 units away from the end)
 
 # Define the characters for the cat and mouse
 cat_char="C"
@@ -47,7 +44,7 @@ while true; do
   # Check if the cat has caught the mouse
   if [ $cat_pos -ge $mouse_pos ]; then
     echo "The cat caught the mouse!"
-    break
+    break  # End the game
   fi
 
   # Wait for input from the user
@@ -61,5 +58,5 @@ while true; do
 
   # Update the mouse's position
   mouse_pos=$(($mouse_pos - $roll))
-
 done
+
